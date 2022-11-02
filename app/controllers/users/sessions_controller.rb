@@ -30,8 +30,6 @@ class Users::SessionsController < Devise::SessionsController
     end
   end
 
-  
-
   def show_invalid_message
     render json: { message: 'No User Exist with this Email!', status: 500}, status: :ok
   end

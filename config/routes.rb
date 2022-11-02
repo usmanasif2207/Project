@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
       registrations: 'users/registrations'
     }
-  delete "logout" , to:"users/sessions#destroy"
+  # delete "logout" , to:"users/sessions#destroy"
   
   #Additional Routes
  post "/admin/add_bulk_drops/import/drops", to:"drop#import"
