@@ -2,11 +2,17 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users,
-             controllers: {
-                 sessions: 'users/sessions',
-                 registrations: 'users/registrations'
-             },
-             path_names: { sign_in: :login , users: :signup}
+    defaults: { format: :json },
+    path: '',
+    path_names: {
+      sign_in: 'users/login',
+      sign_out: 'users/logout',
+      registration: 'users/signup'
+    },
+    controllers: {
+      sessions: 'sessions',
+      registrations: 'registrations'
+    }
   delete "logout" , to:"users/sessions#destroy"
   
   #Additional Routes
