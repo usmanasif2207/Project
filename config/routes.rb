@@ -5,8 +5,10 @@ Rails.application.routes.draw do
              controllers: {
                  sessions: 'users/sessions',
                  registrations: 'users/registrations'
-             }
+             },
+             path_names: { sign_in: :login , users: :signup}
   delete "logout" , to:"users/sessions#destroy"
+  
   #Additional Routes
  post "/admin/add_bulk_drops/import/drops", to:"drop#import"
  get '/cities', to: "drop#city"
