@@ -36,7 +36,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def respond_with(resource, _opts = {})
-    render json: { data: { message: 'Login successfully!', status: 200 } }, status: :ok
+    render json: { data: { message: 'Login successfully!',user: current_user, status: 200 } }, status: :ok
   end
 
   def respond_to_on_destroy
