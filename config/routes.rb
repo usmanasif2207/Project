@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     defaults: { format: :json },
     path: '',
     path_names: {
-      sign_in: 'users/login',
-      sign_out: 'users/logout',
-      registration: 'users/signup'
+      sign_in: 'login',
+      sign_out: 'logout',
+      registration: 'signup'
     },
     controllers: {
       sessions: 'sessions',
