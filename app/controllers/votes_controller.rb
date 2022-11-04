@@ -13,7 +13,12 @@ class VotesController < ApplicationController
                     message: "Invalid Ngo Id",
                     status: 404
                 }, status: :ok
-            else
+            elsif @user.vote_casted == true
+                render json: {
+                    message: "user Already Voted",
+                    status: 401
+                }, status: :ok
+            elsif @user.vote_casted == false
                 @poll_id_1 = Poll.find_by_ngo_id_1_id(params[:ngo_id])
                 @poll_id_2 = Poll.find_by_ngo_id_2_id(params[:ngo_id])
                 @poll_id_3 = Poll.find_by_ngo_id_3_id(params[:ngo_id])
