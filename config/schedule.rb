@@ -4,11 +4,13 @@
 env :PATH, ENV['PATH']
 set :output, "./log/drops.log"
 
-every 1.day, at: '08:18 am' do
+every 1.day, at: '1:26 pm' do
    runner "puts Time.now"
    rake "dist_drops:distribute"
    end
 
-# every 1.day, at: '00:00 am' do
-#    rake "dist_drops:distribute"
-#  end
+every 1.day do
+   runner "puts Time.now"
+   rake "poll:destroy"
+   runner "puts 30days old poll expired"
+ end
