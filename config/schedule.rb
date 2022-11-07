@@ -4,7 +4,7 @@
 env :PATH, ENV['PATH']
 set :output, "./log/drops.log"
 
-every 1.day, at: '08:15 am' do
+every 1.day, at: '08:18 am' do
    runner "puts Time.now"
    rake "dist_drops:distribute"
    end
