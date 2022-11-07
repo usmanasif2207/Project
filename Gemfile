@@ -82,3 +82,4 @@ gem 'sass-rails'
 gem 'country_select', '~> 6.0'
 gem 'city-state'
 gem 'activestorage-validator'
+gem 'whenever', require: false
