@@ -83,3 +83,4 @@ gem 'country_select', '~> 6.0'
 gem 'city-state'
 gem 'activestorage-validator'
 gem 'whenever', require: false
+gem 'geocoder', '~> 1.8', '>= 1.8.1'

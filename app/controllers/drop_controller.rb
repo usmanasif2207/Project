@@ -8,8 +8,12 @@ class DropController < ApplicationController
              status: 404
           }, status: :ok
         else
-        @drop = Drop.where(city: @user.city)
-            if !@drop.present?  || @user.city.nil?
+            lon = params[:longitude]
+            lat = params[:latitude]
+            lat_lon = "#{lat},#{lon}"
+            @response = Geocoder.search(lat_lon).first
+            @drop = Drop.where(city: @response.city)
+            if !@drop.present?  || @response.city.nil?
             render json: {
                 message: "No Drops found in your city",
                 status: 404

@@ -6,6 +6,11 @@ class VotesController < ApplicationController
                 message: "Invalid User Id",
                 status: 404
             }, status: :ok
+        elsif @user.payment_status == false
+            render json: {
+                message: "Please Subscribe to cast vote",
+                status: 401
+            }, status: :ok
         else
             @ngo_id = Ngo.find_by_id(params[:ngo_id])
             if @ngo_id.nil?
