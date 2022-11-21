@@ -43,7 +43,7 @@ class DropController < ApplicationController
             if @user.payment_status == false
                 render json: {
                     message: "Please Subscribe to Collect Drop.",
-                    status: 401
+                    status: 402
                 }, status: :ok
             elsif @drop.is_active == true
                 @user.total_collection = @user.total_collection + @drop.reward_amount
