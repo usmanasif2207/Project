@@ -21,7 +21,7 @@ class VotesController < ApplicationController
             elsif @user.vote_casted == true
                 render json: {
                     message: "user Already Voted",
-                    status: 401
+                    status: 402
                 }, status: :ok
             elsif @user.vote_casted == false
                 @poll_id_1 = Poll.find_by_ngo_id_1_id(params[:ngo_id])
