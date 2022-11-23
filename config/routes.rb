@@ -32,4 +32,5 @@ Rails.application.routes.draw do
   get '/users/getNGOs', to: "ngo#index"
   get '/users/getActivePolls', to: "poll#index"
   get '/users/testUTC', to: "utc#test"
+  get '/users/leaderboard', to: "leaderboard#index"
 end
