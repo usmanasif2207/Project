@@ -167,3 +167,14 @@
 body {
     background-color:  #e1dcc140;
 }
+body.logged_out {
+    background: #0c1e2f;
+}
+body.logged_out .flash {
+    box-shadow: none;
+    background: none;
+    color: #fff;
+    line-height: 1.0em;
+    padding: 0;
+    margin-bottom: 8px;
+}
