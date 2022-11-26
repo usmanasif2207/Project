@@ -171,6 +171,7 @@ body.logged_out {
     background: #0c1e2f;
 }
 body.logged_out .flash {
+    text-shadow: none;
     box-shadow: none;
     background: none;
     color: #fff;
