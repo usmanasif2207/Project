@@ -1,13 +1,13 @@
 class DropController < ApplicationController
 
     def show
-        @user = User.find_by_id(params[:id])
-        if @user.nil?
-        render json: {
-            message: "Invalid UserId",
-             status: 404
-          }, status: :ok
-        else
+        # @user = User.find_by_id(params[:id])
+        # if @user.nil?
+        # render json: {
+        #     message: "Invalid UserId",
+        #      status: 404
+        #   }, status: :ok
+        # else
             lon = params[:longitude]
             lat = params[:latitude]
             lat_lon = "#{lat},#{lon}"
@@ -23,7 +23,7 @@ class DropController < ApplicationController
                     data: @drop
                 }, status: :ok
             end
-        end
+        # end
     end
 
     def collect
