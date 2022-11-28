@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   post "/users/createFeedback", to:"feedback#create"
   post "/users/castVote", to:"votes#castvote"
   post "/users/registerPoll", to:"poll#create"
+  post "/users/changeAvatar", to:"getuserinformation#changeAvatar"
   get "/users/getFeedback", to:"feedback#index"
   get "/users/getUserInformation", to:"getuserinformation#show"
   get "/users/getDropLocations", to:"drop#show"
@@ -33,4 +34,5 @@ Rails.application.routes.draw do
   get '/users/getActivePolls', to: "poll#index"
   get '/users/testUTC', to: "utc#test"
   get '/users/leaderboard', to: "leaderboard#index"
+
 end

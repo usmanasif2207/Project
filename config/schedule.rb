@@ -14,3 +14,8 @@ every 1.day do
    rake "poll:destroy"
    runner "puts 30days old poll expired"
  end
+
+ every 1.day do
+   runner "puts Time.now"
+   rake "payment:changestatus"
+ end
