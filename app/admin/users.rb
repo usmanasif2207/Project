@@ -28,6 +28,7 @@ ActiveAdmin.register User do
       f.input :city, :as => :string
       f.input :country, :as => :string
       f.input :role, as: :select, collection: [["Paid", "paid"], ["Unpaid", "unpaid"], ["Admin", "admin"]]
+      f.input :payment_status, as: :select, collection: [["Yes", "true"], ["No", "false"]]
     end
     f.actions
   end
